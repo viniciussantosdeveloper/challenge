@@ -1,0 +1,181 @@
+@import "./library/base";
+@import "./library/buttons";
+@import "./library/color";
+@import "./library/font";
+@import "./library/variables";
+
+#header {
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    height: 97px;
+    z-index: 1;
+    .header-wrapp {
+        max-width: 1440px;
+        height: 70px;
+        @include flex;
+        .logo {
+            width: 50%;
+            @include flex;
+            justify-content: flex-start;
+            padding-left: $paddingleftfirstsection;
+            @include font_logo;
+            color: $white;
+            span {
+                font-size: 36px;
+                line-height: 60px;
+                color: $orange;
+            }
+        }
+        #nav {
+            width: 50%;
+            @include flex;
+            ul {
+                @include flex;
+                gap: 53px;
+            }
+            li {
+                @include font_nav;
+                color: $white;
+                cursor: pointer;
+                &:hover {
+                    color: $orange;
+                }
+                a{
+                    color: $white;
+                }
+            }
+        }
+        margin: auto;
+    }
+}
+
+#first-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("../img/headerimg.svg");
+    @include background-default;
+    &::before {
+        @include background-mask;
+    }
+    .first-section-wrapp {
+        position: relative;
+        max-width: 1440px;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: $paddingleftfirstsection;
+        h1 {
+            width: 603px;
+            height: 185px;
+            @include font_first_section;
+            color: $white;
+        }
+        button {
+            @include button_first_section;
+            margin-top: 36px;
+        }
+    }
+}
+
+#second-section {
+    width: 100%;
+    height: 100vh;
+    @include flex;
+    .second-section-wrapp {
+        @include flex;
+        align-items: flex-start;
+        gap: 100px;
+        margin-top: 134px;
+        max-width: 1440px;
+        height: 100vh;
+        .second-section-content {
+            @include flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 50px;
+            width: 50%;
+            h1 {
+                position: relative;
+                color: $gray;
+                @include font_second_section_title;
+                span {
+                    color: $orange;
+                }
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 126px;
+                    height: 9px;
+                    top: 90%;
+
+                    background: #c4c4c4;
+                    border-radius: 100px;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 9px;
+                    height: 9px;
+                    top: 90%;
+                    left: 50%;
+
+                    background: #ff6543;
+                    border-radius: 100px;
+                }
+            }
+            p {
+                width: 471px;
+                height: 310px;
+                @include font-second_section;
+            }
+        }
+        #form-one {
+            position: absolute;
+            margin-top: 450px;
+            margin-right: 250px;
+            #email-one {
+                width: 685px;
+                height: 70px;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                @include flex;
+                &::placeholder {
+                    color: $placeholder;
+                    @include font_placeholder;
+                    padding-left: 40px;
+                }
+            }
+            #submit {
+                width: 162px;
+                height: 60px;
+                background: $orange;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                position: absolute;
+                right: 1%;
+                bottom: 7%;
+
+                @include font_submit;
+                color: $white;
+            }
+        }
+        .second-section-right {
+            width: 50%;
+            @include flex;
+            .second-section-img {
+                background: url('../img/nicolas-hoizey--4trKf0Kbow-unsplash\ 1.svg');
+                @include background-default;
+                width: 362px;
+                height: 549px;
+                border-radius: 10px;
+            }
+        }
+    }
+}
